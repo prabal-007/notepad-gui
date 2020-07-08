@@ -80,10 +80,23 @@ def exi():
     if value == True:
         root.destroy()
     else: pass
+def feedback():
+    feed=Tk()
+    feed.geometry('400x400')
+    mail = Label(feed, text='Email address')
+    mail.grid()
+    e_mail=Entry(feed, textvariable=StringVar)
+    e_mail.grid(row=0,column=2)
+    mess= Label(feed, text='Message')
+    mess.grid(row=1,column=0)
+    textarea= Text(feed, font='lucida 12')
+    textarea.grid(row=1, column=3, padx='50', pady='50')
+    feed.mainloop()
 
 if __name__ == "__main__":
     root=Tk()
-    root.title('Notepad')
+    root.title('Untitled.. -Notepad')
+    root.iconbitmap('F:\\vsCode-python\\notepad-ide\\logo.png')
     canvas_width = 500
     canvas_height = 500
     root.geometry(f'{canvas_width}x{canvas_height}')
@@ -115,7 +128,7 @@ if __name__ == "__main__":
     m1.add_command(label='Exit', command=exi)
 
     m2 = Menu(mainmenu, tearoff=0)
-    m2.add_command(label='Send feedback', command=file)
+    m2.add_command(label='Send feedback', command=feedback)
     m2.add_command(label='About us', command=about)
 
     m3 = Menu(mainmenu, tearoff=0)
