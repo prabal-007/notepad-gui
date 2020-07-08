@@ -58,6 +58,16 @@ def resize():
     Button(res, text='change', command=change).grid(row=3, column=1)
     res.mainloop
 
+def about():
+    abut = Tk()
+    abut.title('About us')
+    abut.geometry('400x200')
+    title= Label(abut,text='About us', font='lucidus 18 bold')
+    title.pack(padx='10', pady='10')
+    Label(abut,text='''This Notepad ide is developed using Python programming language\nPython Tkinter module is used for gui/user interface\n,
+     First commit = 08/07/2020\nMade by Prabal Gupta\ngit- https://github.com/prabal-007/notepad-gui.git''').pack()
+    abut.mainloop()
+
 def cut():
     textarea.event_generate(("<<Cut>>"))
 def Copy():
@@ -102,7 +112,7 @@ if __name__ == "__main__":
 
     m2 = Menu(mainmenu, tearoff=0)
     m2.add_command(label='Send feedback', command=file)
-    m2.add_command(label='About us', command=file)
+    m2.add_command(label='About us', command=about)
 
     m3 = Menu(mainmenu, tearoff=0)
     m3.add_command(label='Cut', command=cut)
