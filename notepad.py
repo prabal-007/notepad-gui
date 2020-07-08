@@ -1,4 +1,5 @@
 from tkinter import *
+import tkinter.messagebox as tmsg
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 import os
 
@@ -75,7 +76,10 @@ def Copy():
 def paste():
     textarea.event_generate(("<<Paste>>"))
 def exi():
-    root.destroy()
+    value = tmsg.askyesno('Exit..','Are you sure, Exit?')
+    if value == True:
+        root.destroy()
+    else: pass
 
 if __name__ == "__main__":
     root=Tk()
